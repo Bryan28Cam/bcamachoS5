@@ -27,13 +27,13 @@ namespace bcamachoS5
             try
             {
                 WebClient cliente = new WebClient();
-                string Url = "http://127.0.0.1/ws_uisrael/post.php";
+                string Url = "http://192.168.17.25/wsuisrael/post.php";
                 string codigo = txtCodigo.Text;
                 string nombre = txtNombre.Text;
                 string apellido = txtApellido.Text;
                 string edad = txtEdad.Text;
 
-                string url = $"{Url}?codigo={codigo}$nombre={nombre}$apellido={apellido}$edad={edad}";
+                string url = $"{Url}?codigo={codigo}&nombre={nombre}&apellido={apellido}&edad={edad}";
 
                 var parametros = new System.Collections.Specialized.NameValueCollection();
                 parametros.Add("codigo", txtCodigo.Text);
@@ -41,7 +41,10 @@ namespace bcamachoS5
                 parametros.Add("apellido", txtApellido.Text);
                 parametros.Add("edad", txtEdad.Text);
                 cliente.UploadValues(url, "PUT", parametros);
-                DisplayAlert("Alerta", "Datos Actualizados", "Cerrar");
+                //Mensaje TOAST
+                var mensaje = "Dato actualizado";
+                DependencyService.Get<Mensaje>().LongAlert(mensaje);
+
                 Navigation.PushAsync(new MainPage());
             }catch (Exception ex)
             {
@@ -54,13 +57,13 @@ namespace bcamachoS5
             try
             {
                 WebClient cliente = new WebClient();
-                string Url = "http://127.0.0.1/ws_uisrael/post.php";
+                string Url = "http://192.168.17.25/wsuisrael/post.php";
                 string codigo = txtCodigo.Text;
                 string nombre = txtNombre.Text;
                 string apellido = txtApellido.Text;
                 string edad = txtEdad.Text;
 
-                string url = $"{Url}?codigo={codigo}$nombre={nombre}$apellido={apellido}$edad={edad}";
+                string url = $"{Url}?codigo={codigo}";
 
                 var parametros = new System.Collections.Specialized.NameValueCollection();
                 parametros.Add("codigo", txtCodigo.Text);
@@ -68,7 +71,10 @@ namespace bcamachoS5
                 parametros.Add("apellido", txtApellido.Text);
                 parametros.Add("edad", txtEdad.Text);
                 cliente.UploadValues(url, "DELETE", parametros);
-                DisplayAlert("Alerta", "Datos Eliminados", "Cerrar");
+                //Mensaje TOAST
+                var mensaje = "Dato eliminado";
+                DependencyService.Get<Mensaje>().LongAlert(mensaje);
+
                 Navigation.PushAsync(new MainPage());
             }
             catch (Exception ex)

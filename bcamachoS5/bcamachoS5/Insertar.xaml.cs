@@ -23,14 +23,17 @@ namespace bcamachoS5
             try
             {
                 WebClient cliente = new WebClient();
-                string Url = "http://127.0.0.1/ws_uisrael/post.php";
+                string Url = "http://192.168.17.25/wsuisrael/post.php";
                 var parametros = new System.Collections.Specialized.NameValueCollection();
                 parametros.Add("codigo", txtCodigo.Text);
                 parametros.Add("nombre", txtNombre.Text);
                 parametros.Add("apellido", txtApellido.Text);
                 parametros.Add("edad", txtEdad.Text);
                 cliente.UploadValues(Url, "POST", parametros);
-                DisplayAlert("Alerta", "Ingreso Correcto", "Cerrar");
+                //Mensaje TOAST
+                var mensaje = "Dato ingresado";
+                DependencyService.Get<Mensaje>().LongAlert(mensaje);
+
                 Navigation.PushAsync(new MainPage());
             }
             catch (Exception ex)

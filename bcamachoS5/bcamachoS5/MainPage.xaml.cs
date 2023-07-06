@@ -13,7 +13,7 @@ namespace bcamachoS5
 {
     public partial class MainPage : ContentPage
     {
-        private const string Url = "http://127.0.0.1/ws_uisrael/post.php";
+        private const string Url = "http://192.168.17.25/wsuisrael/post.php";
         private HttpClient cliente = new HttpClient();
         private ObservableCollection<bcamachoS5.Datos> datos;
         public MainPage()

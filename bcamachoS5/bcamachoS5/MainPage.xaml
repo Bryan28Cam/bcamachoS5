@@ -16,10 +16,10 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Text="´CODIGO" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="0"></Label>
-                <Label Text="´NOMBRE" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="1"></Label>
-                <Label Text="´APELLIDO" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="2"></Label>
-                <Label Text="´EDAD" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="3"></Label>
+                <Label Text="CODIGO" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="0"></Label>
+                <Label Text="NOMBRE" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="1"></Label>
+                <Label Text="APELLIDO" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="2"></Label>
+                <Label Text="EDAD" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="3"></Label>
             </Grid>
             <ListView x:Name="listaEstudiantes" ItemSelected="listaEstudiantes_ItemSelected">
                 <ListView.ItemTemplate>
